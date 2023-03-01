@@ -4,21 +4,13 @@ on: push
 jobs:
   job_id_1:
     runs-on: ubuntu-latest
+    needs: job_id_2
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: echo 
+      - run: echo test
 
   job_id_2:
     runs-on: ubuntu-latest
-    name: 
+    needs: job_id_1
+    name: job_name
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: echo 
+      - run: echo test
