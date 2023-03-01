@@ -1,8 +1,8 @@
 name: WG-github-actions
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
-on: [push]
+on: push
 jobs:
-  check-bats-version:
+  job_id_1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -10,4 +10,15 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g bats
-      - run: bats -v
+      - run: echo 
+jobs:
+  job_id_2:
+    name:job_name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: echo 
