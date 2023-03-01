@@ -11,7 +11,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: echo 
-jobs:
+
   job_id_2:
     name:job_name
     runs-on: ubuntu-latest
