@@ -13,7 +13,6 @@ jobs:
       - run: echo 
 
   job_id_2:
-    name:job_name
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
