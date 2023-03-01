@@ -4,10 +4,12 @@ on: push
 jobs:
   job_id_1:
     runs-on: ubuntu-latest
+    name: test1
     steps:
       - run: echo test
   job_id_2:
     runs-on: ubuntu-latest
+    name: test1
     needs: job_id_1
     steps:
       - run: echo test
