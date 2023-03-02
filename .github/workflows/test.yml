@@ -2,17 +2,23 @@ name: WG-github-actions
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on: push
 env:
-  Workfrow_env: Workfrow_env
+  Workfrow_env: Workfrow
+  Override_env: Set_workfrow
 
 jobs:
   jons-_d_1:
     runs-on: ubuntu-latest
     env:
-      Jobs_env: Jobs_env
+      Jobs_env: Jobs
     steps:
       - env:
-          Steps_env: Steps_env
-        run: echo "$Workfrow_env $Jobs_env $Steps_env"
+          Steps_env: Steps
+          Override_env: Set_steps
+        run: |
+          echo "Workfrow_env = $Workfrow_env"
+          echo "Jobs_env = $Jobs_env"
+          echo "Steps_env = $Steps_env"
+          echo "Override_env = $Override_env"
 
 
 
