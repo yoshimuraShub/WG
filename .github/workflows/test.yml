@@ -3,12 +3,11 @@ run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on: push
 env:
   TEST_ENV: 1
-
 jobs:
   job_id_1:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.TEST_ENV == 2 }}
+      - if: env.TEST_ENV == 2
         run: echo test
 
 
