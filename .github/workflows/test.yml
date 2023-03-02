@@ -5,10 +5,10 @@ env:
   DAY_OF_WEEK: Monday
 
 jobs:
-  greeting_job:
+  job_id_1:
     runs-on: ubuntu-latest
     steps:
       - if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo "$Greeting  Today is $DAY_OF_WEEK!"
+        run: echo test
 
 
