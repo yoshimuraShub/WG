@@ -10,9 +10,9 @@ jobs:
     env:
       Jobs_env: Jobs_env
     steps:
+        run: echo "$Workfrow_env $Jobs_env $Steps_env"
         env:
           Steps_env: Steps_env
-        run: echo "$Workfrow_env $Jobs_env $Steps_env"
 
 
 
