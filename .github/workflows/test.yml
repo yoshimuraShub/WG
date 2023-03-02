@@ -6,7 +6,7 @@ env:
 jobs:
   job_id_1:
     runs-on: ubuntu-latest
-    if: env.testenv = 2
+    if: testenv = 2
     steps:
       - run: sleep 1m
 
