@@ -2,11 +2,13 @@ name: WG-github-actions
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on: push
 env:
-  TEST_ENV: Monday
+  DAY_OF_WEEK: Monday
+
 jobs:
-  job_id1:
+  greeting_job:
     runs-on: ubuntu-latest
-    if: ${{ env.TEST_ENV == 2 }}
     steps:
-      - run: echo test
+        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+        run: echo test
+
 
