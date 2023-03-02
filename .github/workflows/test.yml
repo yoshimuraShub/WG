@@ -8,5 +8,6 @@ jobs:
       - run: sleep 1m
   job_id_2:
     runs-on: ubuntu-latest
+    needs: job_id_1
     steps:
       - run: echo test
