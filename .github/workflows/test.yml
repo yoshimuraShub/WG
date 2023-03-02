@@ -1,14 +1,12 @@
 name: WG-github-actions
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on: push
+env:
+  testenv: 1
 jobs:
   job_id_1:
     runs-on: ubuntu-latest
-    if: always()
+    if: env.testenv = 2
     steps:
       - run: sleep 1m
-  job_id_2:
-    runs-on: ubuntu-latest
-    needs: job_id_1
-    steps:
-      - run: echo test
+
