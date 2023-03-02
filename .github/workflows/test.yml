@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo test
+        - run: echo test
 
 
