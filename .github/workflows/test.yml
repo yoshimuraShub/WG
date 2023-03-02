@@ -8,7 +8,7 @@ jobs:
   greeting_job:
     runs-on: ubuntu-latest
     steps:
-        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        - run: echo test
+      if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+      - run: echo test
 
 
