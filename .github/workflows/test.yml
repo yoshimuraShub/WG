@@ -5,5 +5,8 @@ jobs:
   job_id_1:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 5m
-
+      - run: sleep 1m
+  job_id_2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo test
