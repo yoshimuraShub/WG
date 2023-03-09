@@ -4,6 +4,11 @@ on: push
 env:
   Workfrow_env: Workfrow
 
+defaults:
+  run:
+    shell: bash
+    working-directory: scripts
+
 jobs:
   job-_id_1:
     name: job1
