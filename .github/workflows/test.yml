@@ -5,7 +5,6 @@ on:
     inputs:
       input1:
         description: 'input1 guild text'
-        required: true
         default: 'select2'
         type: choice
         options:
@@ -13,13 +12,13 @@ on:
         - select2
         - select3
       input2:
-        required: false
         type: boolean
       input3:
+        required: true
         description: '自動入力'
 
 jobs:
-  log-the-inputs:
+  job_id1:
     runs-on: ubuntu-latest
     steps:
       - run: |
