@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       input1:
+        type: boolean
+      input2:
         description: 'input1 guild text'
         default: 'select2'
         type: choice
@@ -11,8 +13,6 @@ on:
         - select1
         - select2
         - select3
-      input2:
-        type: boolean
 
 jobs:
   job_id1:
