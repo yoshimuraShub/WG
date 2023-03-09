@@ -8,12 +8,12 @@ jobs:
   job-_id_1:
     runs-on: ubuntu-latest
     steps:
-        run: |
+      - run: |
           echo "### job1 :rocket:" >> $GITHUB_STEP_SUMMARY
 
   job-_id_2:
     runs-on: ubuntu-latest
     steps:
-        run: |
+      - run: |
           echo "### job2 ###" >> $GITHUB_STEP_SUMMARY
           echo "Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
