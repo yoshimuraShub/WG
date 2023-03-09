@@ -13,9 +13,6 @@ on:
         - select3
       input2:
         type: boolean
-      input3:
-        required: true
-        description: '自動入力'
 
 jobs:
   job_id1:
@@ -24,4 +21,3 @@ jobs:
       - run: |
           echo "${{ inputs.input1}}"
           echo "${{ inputs.input2}}"
-          echo "${{ inputs.input3}}"
