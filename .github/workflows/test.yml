@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        uses: actions/checkout@v3
         timeout-minutes: 2000
+        run: |
+          sleep 50h
 
   job-_id_2:
     name: job2
