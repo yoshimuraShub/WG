@@ -6,7 +6,7 @@ on:
       input1:
         type: boolean
       input2:
-        description: 'input1 guild text'
+        description: 'input2 guild text'
         default: 'select2'
         type: choice
         options:
