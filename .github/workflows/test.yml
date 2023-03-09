@@ -1,19 +1,35 @@
-name: WG-github-actions
+name: WG-github-actions_dispatch
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
-on: push
-env:
-  Workfrow_env: Workfrow
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 
 jobs:
-  job-_id_1:
+  log-the-inputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "### job1 :rocket:" >> $GITHUB_STEP_SUMMARY
-
-  job-_id_2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "### job2 ###" >> $GITHUB_STEP_SUMMARY
-          echo "Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}
