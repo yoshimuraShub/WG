@@ -2,12 +2,27 @@ name: WG-github-actions_dispatch
 run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on:
   workflow_dispatch:
-
+    inputs:
+      input1:
+        description: 'input1 guild text'
+        required: true
+        default: 'select2'
+        type: choice
+        options:
+        - select1
+        - select2
+        - select3
+      input2:
+        required: false
+        type: boolean
+      input3:
+        description: '自動入力'
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Log level: $LEVEL"
-
+          echo "${{ inputs.input1}}"
+          echo "${{ inputs.input2}}"
+          echo "${{ inputs.input3}}"
