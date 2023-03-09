@@ -3,22 +3,22 @@ run-name: workfrow to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on: push
 env:
   Workfrow_env: Workfrow
-  Override_env: Set_workfrow
 
 jobs:
-  jons-_d_1:
+  job-_id_1:
+    name: job1
     runs-on: ubuntu-latest
-    env:
-      Jobs_env: Jobs
     steps:
-      - env:
-          Steps_env: Steps
-          Override_env: Set_steps
+      - name: step1
+        uses: actions/checkout@v3
+        timeout-minutes: 2000
+
+  job-_id_2:
+    name: job2
+    runs-on: ubuntu-latest
+    needs: job-_id_1
+    if: always()
+    steps:
+      - name: step1
         run: |
-          echo "Workfrow_env = $Workfrow_env"
-          echo "Jobs_env = $Jobs_env"
-          echo "Steps_env = $Steps_env"
-          echo "Override_env = $Override_env"
-
-
-
+          echo test
